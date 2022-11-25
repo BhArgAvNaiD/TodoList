@@ -63,23 +63,16 @@
     </table>
   </div>
   <script>
-
-    // console.log('Button working');
     function newupdate() {
       tit = document.getElementById('title').value;
       des = document.getElementById('description').value;
 
       if (localStorage.getItem('List') == null) {
-        // console.log('if connected');
         listArray = [];
-        // console.log('array created');
         listArray.push([tit, des]);
-        // console.log('pushed');
         localStorage.setItem('List', JSON.stringify(listArray));
-        // console.log('list created');
       }
       else {
-        // console.log('else working');
         listArrayStr = localStorage.getItem('List');
         listArray = JSON.parse(listArrayStr);
         listArray.push([tit, des]);
@@ -93,15 +86,10 @@
       des = document.getElementById('description').value;
 
       if (localStorage.getItem('List') == null) {
-        // console.log('if connected');
         listArray = [];
-        // console.log('array created');
-        // console.log('pushed');
         localStorage.setItem('List', JSON.stringify(listArray));
-        // console.log('list created');
       }
       else {
-        // console.log('else working');
         listArrayStr = localStorage.getItem('List');
         listArray = JSON.parse(listArrayStr);
       }
@@ -121,7 +109,7 @@
 
     btn = document.getElementById('add');
     btn.addEventListener('click', newupdate);
-    newupdate();
+    // newupdate();
 
     function deleted(item) {
       console.log('delete' + item);
